@@ -4,6 +4,7 @@ import requests
 app = Flask(__name__)
 app.secret_key = 'niggerz'
 API = "https://pokeapi.co/api/v2/pokemon/"
+
 @app.route("/")
 def index():
     return render_template("index.html")

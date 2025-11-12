@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block title %}poKKKeAPI{% endblock %}
+
+{% block content %}
+
+<body class="bg-dark">
+    
+    <div class="container d-flex justify-content-center align-items-center min-vh-100">
+        <div class="card border-warning" style="width: 400px;">
+            <div class="card-body bg-black p-4">
+
+                <div class="text-center mb-4 bg-black">
+                    <img src="https://images.cooltext.com/5744865.gif" width="350" height="100" alt="Inicio de Sesion" />
+                </div>
+                
+                <form action="/search" method="post">
+
+                    <div class="mb-4">
+                        <label class="form-label text-white">Busca un Pokemon</label>
+                        <input type="text" class="form-control form-control-lg border-warning" name="pokemon" placeholder="Pokemon" required>
+                    </div>
+
+                    <div class="text-center">
+                    <button type="submit" class="btn btn-outline-warning btn-lg mb-3" type="submit">Buscar Pokemon!</button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
