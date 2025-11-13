@@ -1,8 +1,41 @@
 {% extends "base.html" %}
 
-{% block title %}poKKKeAPI{% endblock %}
+{% block title %}{{ nombre_pokemon }} - Pokedex{% endblock %}
 
 {% block content %}
 
+<div class="row justify-content-center">
+    <div class="col-md-10 col-lg-8">
+        <!-- Tarjeta del pokemon -->
+        <div class="card pokemon-card mb-4">
+            <div class="card-body p-4">
+                <!-- Header del pokemon -->
+                <div class="text-center mb-4">
+                    <h2 class="display-4 fw-bold text-capitalize">
+                        {{ nombre_pokemon }}
+                        <small class="text-muted fs-3">#{{ pokemon.id }}</small>
+                    </h2>
+                </div>
+
+                <div class="row">
+                    <!-- Imagen del pokemon -->
+                    <div class="col-md-4 text-center">
+                        <img src="{{ imagen.pokemon }}" 
+                            alt="{{ nombre.pokemon }}" 
+                            class="pokemon-img img-fluid mb-3">
+                    </div>
+
+                    <!-- Tipos -->
+                    <div class="mb-3">
+                        {% for type in pokemon.types %}
+                        <span class="badge type-badge bg-type-{{ type.lower() }}">
+                            {{ type }}
+                        </span>
+                        {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 {% endblock %}
